@@ -1,0 +1,15 @@
+PODS:
+  - Alamofire (3.4.1)
+  - libjingle_peerconnection (11177.2.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.4)
+  - libjingle_peerconnection
+
+SPEC CHECKSUMS:
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  libjingle_peerconnection: 3458f646ddd61f08a9f3a0c43fb01fff5c165eb8
+
+PODFILE CHECKSUM: 4aae3c64f332a384a918bf8b56f36db867eb7f0c
+
+COCOAPODS: 1.0.1

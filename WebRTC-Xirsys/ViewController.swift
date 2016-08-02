@@ -13,7 +13,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let webrtc = WebRTCManager()
+        APIManager.sharedInstance.getIceServers(onSuccess: { (serverArray) in
+            print(serverArray[0].URL.absoluteString)
+            }) { (error) in
+                print("Error!!")
+        }
     }
 
     override func didReceiveMemoryWarning() {

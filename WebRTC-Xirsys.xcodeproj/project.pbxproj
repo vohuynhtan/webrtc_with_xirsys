@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D9699781D50EAD9001D9FC5 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9699761D50EAD9001D9FC5 /* APIConfig.swift */; };
+		4D9699791D50EAD9001D9FC5 /* GenericAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9699771D50EAD9001D9FC5 /* GenericAPI.swift */; };
+		4D96997B1D50EAE8001D9FC5 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D96997A1D50EAE8001D9FC5 /* APIManager.swift */; };
+		4D96997E1D50ECD7001D9FC5 /* BaseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D96997D1D50ECD7001D9FC5 /* BaseExtensions.swift */; };
 		4DFDDA631D4FA8FF002BCED2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFDDA621D4FA8FF002BCED2 /* AppDelegate.swift */; };
 		4DFDDA651D4FA8FF002BCED2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFDDA641D4FA8FF002BCED2 /* ViewController.swift */; };
 		4DFDDA681D4FA8FF002BCED2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DFDDA661D4FA8FF002BCED2 /* Main.storyboard */; };
@@ -19,6 +23,10 @@
 
 /* Begin PBXFileReference section */
 		2E45B4B9ED2D3EB1331CA040 /* Pods-WebRTC-Xirsys.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebRTC-Xirsys.release.xcconfig"; path = "Pods/Target Support Files/Pods-WebRTC-Xirsys/Pods-WebRTC-Xirsys.release.xcconfig"; sourceTree = "<group>"; };
+		4D9699761D50EAD9001D9FC5 /* APIConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
+		4D9699771D50EAD9001D9FC5 /* GenericAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericAPI.swift; sourceTree = "<group>"; };
+		4D96997A1D50EAE8001D9FC5 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		4D96997D1D50ECD7001D9FC5 /* BaseExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseExtensions.swift; sourceTree = "<group>"; };
 		4DFDDA5F1D4FA8FE002BCED2 /* WebRTC-Xirsys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WebRTC-Xirsys.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DFDDA621D4FA8FF002BCED2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DFDDA641D4FA8FF002BCED2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +53,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D9699731D50EA38001D9FC5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4D9699741D50EAAB001D9FC5 /* APIsConfig */,
+				4D9699751D50EAB6001D9FC5 /* APIsManager */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4D9699741D50EAAB001D9FC5 /* APIsConfig */ = {
+			isa = PBXGroup;
+			children = (
+				4D9699761D50EAD9001D9FC5 /* APIConfig.swift */,
+				4D9699771D50EAD9001D9FC5 /* GenericAPI.swift */,
+			);
+			path = APIsConfig;
+			sourceTree = "<group>";
+		};
+		4D9699751D50EAB6001D9FC5 /* APIsManager */ = {
+			isa = PBXGroup;
+			children = (
+				4D96997A1D50EAE8001D9FC5 /* APIManager.swift */,
+			);
+			path = APIsManager;
+			sourceTree = "<group>";
+		};
+		4D96997C1D50ECA7001D9FC5 /* Ultilities */ = {
+			isa = PBXGroup;
+			children = (
+				4D96997D1D50ECD7001D9FC5 /* BaseExtensions.swift */,
+			);
+			path = Ultilities;
+			sourceTree = "<group>";
+		};
 		4DFDDA561D4FA8FE002BCED2 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +108,8 @@
 		4DFDDA611D4FA8FE002BCED2 /* WebRTC-Xirsys */ = {
 			isa = PBXGroup;
 			children = (
+				4D96997C1D50ECA7001D9FC5 /* Ultilities */,
+				4D9699731D50EA38001D9FC5 /* Services */,
 				4DFDDA751D4FADDD002BCED2 /* IceServerManager */,
 				4DFDDA741D4FADC4002BCED2 /* WebRTCManager */,
 				4DFDDA621D4FA8FF002BCED2 /* AppDelegate.swift */,
@@ -236,8 +280,12 @@
 			files = (
 				4DFDDA7D1D4FBA47002BCED2 /* WebRTCManager.swift in Sources */,
 				4DFDDA651D4FA8FF002BCED2 /* ViewController.swift in Sources */,
+				4D96997E1D50ECD7001D9FC5 /* BaseExtensions.swift in Sources */,
+				4D9699791D50EAD9001D9FC5 /* GenericAPI.swift in Sources */,
 				4DFDDA631D4FA8FF002BCED2 /* AppDelegate.swift in Sources */,
 				4DFDDA771D4FAE40002BCED2 /* IceServerManager.swift in Sources */,
+				4D9699781D50EAD9001D9FC5 /* APIConfig.swift in Sources */,
+				4D96997B1D50EAE8001D9FC5 /* APIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

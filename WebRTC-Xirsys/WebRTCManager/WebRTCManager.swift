@@ -7,21 +7,52 @@
 //
 
 import UIKit
+import XirSys
 
-class WebRTCManager: NSObject {
+class WebRTCManager: NSObject, RTCPeerConnectionDelegate {
 
     var iceServerArray = Array<RTCICEServer>()
+    var peerConnection:RTCPeerConnection?
+    var peerConnectionFactory:RTCPeerConnectionFactory
     
 
     override init() {
-        super.init()
-        IceServerManager.getXirsysIceServer(sendIceServer: { (iceServers) in
-            self.iceServerArray = iceServers
-            
-            
-            }) { 
-                print("Completed")
-                
-        }
+        
+        peerConnectionFactory = RTCPeerConnectionFactory()
+        
     }
+    
+    func createPeerConnectionWithIceServers(iceServers:Array<RTCICEServer>){
+        self.peerConnection = peerConnectionFactory.peerConnectionWithICEServers(iceServers, constraints: self.streamSDPConstraints(), delegate: self)
+        
+        let lms = peerConnectionFactory
+        
+        let audioTrack = peerConnectionFactory.audioTrackWithID("ARDAMSa0")
+    }
+    
+    func streamSDPConstraints() -> RTCMediaConstraints{
+        let mandatory = [RTCPair(key: "OfferToReceiveAudio", value: "true"), RTCPair(key: "OfferToReceiveVideo", value: "true")]
+        let optional = [RTCPair(key: "internalSctpDataChannels", value: "true"), RTCPair(key: "DtlsSrtpKeyAgreement", value: "true")]
+        
+        return RTCMediaConstraints(mandatoryConstraints: mandatory, optionalConstraints: optional)
+    }
+    
+    // MARK:
+    // MARK: RTCPeerConnectionDelegate
+    func peerConnection(peerConnection: RTCPeerConnection!, signalingStateChanged stateChanged: RTCSignalingState) {
+        print("PC0 signalingStateChanged: %d", stateChanged)
+    }
+    
+    func peerConnectionOnRenegotiationNeeded(peerConnection: RTCPeerConnection!) {
+        
+    }
+    
+    func peerConnection(peerConnection: RTCPeerConnection!, iceGatheringChanged newState: RTCICEGatheringState) {
+        
+    }
+    
+    func peerConnection(peerConnection: RTCPeerConnection!, iceConnectionChanged newState: RTCICEConnectionState) {
+        
+    }
+
 }
